@@ -16,6 +16,7 @@ void delay(volatile uint32_t count)
 
 int main(void)
 {
+    RCC_AHB1ENR |= (1U << 2);
     GPIOC_MODER &= ~((3U << 20) | (3U << 24));
     GPIOC_MODER |=  ((1U << 20) | (1U << 24));
     GPIOC_OTYPER &= ~(LED1_PIN | LED2_PIN);
